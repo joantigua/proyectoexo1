@@ -1,0 +1,30 @@
+{% extends 'crudrh/main.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel = "stylesheet" type = "text/css" href = "{% static '/css/main.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <div class="container">
+      <div class="card card-body">
+          <ul class="list-group">
+              {% for candidato in candidatos %}
+              <li class="list-group-item"><strong>Cedula:</strong> {{candidato.cedula}}</li>
+              <li class="list-group-item"><strong>Nombre:</strong> {{candidato.nombre_candidato}}</li>
+              <li class="list-group-item"><strong>Puesto Aspiracion:</strong> {{candidato.puesto_aspiracion}}</li>
+              <li class="list-group-item"><strong>Departamento:</strong> {{candidato.departamento}}</li>
+              <li class="list-group-item"><strong>Salario Aspiracion:</strong> {{candidato.salario_aspiracion}}</li>
+              <li class="list-group-item"><strong>Principales Competencias:</strong>  {% for competencias in candidato.principales_competencias.all %} <br> {{competencias.descripcion}} {% endfor %}</li>
+              <li class="list-group-item"><strong>Principales Capacitaciones:</strong> {% for capacitaciones in candidato.principales_capacitaciones.all %} <br> {{capacitaciones.descripcion}} {% endfor %}</li>
+              <li class="list-group-item"><strong>Experiencia Laboral 1:</strong>  {% for experiencia_laboral in candidato.experiencia_laboral.all %} <br> {{experiencia_laboral.puesto_ocupado}} en la empresa {{experiencia_laboral.empresa}} {% endfor %}</li>
+              <li class="list-group-item"><strong>Recomendacion:</strong> {{candidato.recomendacion}}</li>
+              {% endfor %}
+          </ul>
+          <td><a class="btn btn-secondary" href="/candidatos">Atras<span class="sr-only">(current)</span></a></td>
+      </div>
+  </div>
+{% endblock content %}
+
+

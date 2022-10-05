@@ -1,0 +1,40 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Puestos</h5>
+					<td><a class="btn btn-success" href="/create_puestos">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Nombre del Puesto</th>
+              <th>Rango Salarial</th>
+              <th>Nivel de Riesgo</th>
+							<th>Estado</th>
+						</tr>
+
+						{% for i in puestos %}
+						<tr>
+							<td>{{i.nombre_puesto}}</td>
+							<td>{{i.salario_minimo}} - {{i.salario_maximo}}</td>
+							<td>{{i.nivel_riesgo}}</td>
+							<td>{{i.estado}}</td>
+							<td><a class="btn btn-info" href="/update_puestos/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-danger" href="/delete_puestos/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-info" href="/view_puestos/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

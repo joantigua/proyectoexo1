@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{acffc0b5-e8f5-4b99-a6d4-d5ed39138853}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <DjangoSettingsModule>proyectoexo.settings</DjangoSettingsModule>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="crudrh\admin.py" />
+    <Compile Include="crudrh\apps.py" />
+    <Compile Include="crudrh\decorators.py" />
+    <Compile Include="crudrh\excel_export.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="crudrh\filters.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="crudrh\forms.py" />
+    <Compile Include="crudrh\migrations\0001_initial.py" />
+    <Compile Include="crudrh\migrations\0002_alter_candidatos_principales_capacitaciones_and_more.py" />
+    <Compile Include="crudrh\migrations\0003_alter_capacitaciones_fecha_final_and_more.py" />
+    <Compile Include="crudrh\migrations\0004_alter_candidatos_experiencia_laboral.py" />
+    <Compile Include="crudrh\migrations\0005_remove_empleados_cedula_and_more.py" />
+    <Compile Include="crudrh\migrations\0006_remove_candidatos_principales_capacitaciones_and_more.py" />
+    <Compile Include="crudrh\migrations\0007_rename_candidatos_empleados_candidato_and_more.py" />
+    <Compile Include="crudrh\migrations\0008_empleados_codigo_empleado.py" />
+    <Compile Include="crudrh\migrations\0009_alter_empleados_codigo_empleado.py" />
+    <Compile Include="crudrh\migrations\__init__.py" />
+    <Compile Include="crudrh\models.py" />
+    <Compile Include="crudrh\tests.py" />
+    <Compile Include="crudrh\urls.py" />
+    <Compile Include="crudrh\views.py" />
+    <Compile Include="crudrh\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="proyectoexo\asgi.py" />
+    <Compile Include="proyectoexo\settings.py" />
+    <Compile Include="proyectoexo\urls.py" />
+    <Compile Include="proyectoexo\wsgi.py" />
+    <Compile Include="proyectoexo\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="crudrh\templates\crudrh\candidatos_form_search.html" />
+    <Content Include="crudrh\templates\crudrh\candidatos.html" />
+    <Content Include="crudrh\templates\crudrh\candidatos_form.html" />
+    <Content Include="crudrh\templates\crudrh\empleados_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\experiencia_laboral_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\puestos_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\capacitaciones_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\idiomas_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\competencias_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\candidatos_form_view.html" />
+    <Content Include="crudrh\templates\crudrh\candidatos_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\capacitaciones.html" />
+    <Content Include="crudrh\templates\crudrh\capacitaciones_form.html" />
+    <Content Include="crudrh\templates\crudrh\capacitaciones_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\competencias.html" />
+    <Content Include="crudrh\templates\crudrh\competencias_form.html" />
+    <Content Include="crudrh\templates\crudrh\competencias_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\delete.html" />
+    <Content Include="crudrh\templates\crudrh\empleados.html" />
+    <Content Include="crudrh\templates\crudrh\empleados_form.html" />
+    <Content Include="crudrh\templates\crudrh\empleados_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\experiencia_laboral.html" />
+    <Content Include="crudrh\templates\crudrh\experiencia_laboral_form.html" />
+    <Content Include="crudrh\templates\crudrh\experiencia_laboral_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\export_excel.html" />
+    <Content Include="crudrh\templates\crudrh\home_page.html" />
+    <Content Include="crudrh\templates\crudrh\idiomas.html" />
+    <Content Include="crudrh\templates\crudrh\idiomas_form.html" />
+    <Content Include="crudrh\templates\crudrh\idiomas_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\login.html" />
+    <Content Include="crudrh\templates\crudrh\main.html" />
+    <Content Include="crudrh\templates\crudrh\navbar.html" />
+    <Content Include="crudrh\templates\crudrh\puestos.html" />
+    <Content Include="crudrh\templates\crudrh\puestos_form.html" />
+    <Content Include="crudrh\templates\crudrh\puestos_form_update.html" />
+    <Content Include="crudrh\templates\crudrh\register.html" />
+    <Content Include="crudrh\templates\crudrh\user.html" />
+    <Content Include="static\css\login.css" />
+    <Content Include="static\css\main.css" />
+    <Content Include="static\css\register.css" />
+    <Content Include="static\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="crudrh" />
+    <Folder Include="crudrh\migrations" />
+    <Folder Include="crudrh\templates\" />
+    <Folder Include="crudrh\templates\crudrh" />
+    <Folder Include="proyectoexo" />
+    <Folder Include="static\" />
+    <Folder Include="static\css" />
+    <Folder Include="static\images" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.10</Version>
+      <Description>env (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

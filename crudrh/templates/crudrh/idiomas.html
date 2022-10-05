@@ -1,0 +1,36 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Idiomas</h5>
+					<td><a class="btn btn-success" href="/create_idiomas">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Idioma</th>
+							<th>Estado</th>
+						</tr>
+
+						{% for i in idiomas %}
+						<tr>
+							<td>{{i.nombre_idioma}}</td>
+							<td>{{i.estado}}</td>
+							<td><a class="btn btn-info" href="/update_idiomas/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-danger" href="/delete_idiomas/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-info" href="/view_idiomas/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

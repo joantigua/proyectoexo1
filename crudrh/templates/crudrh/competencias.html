@@ -1,0 +1,33 @@
+{%  extends 'crudrh/main.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+	<div class="row">
+		<div class="col-md">
+			<div class="card card-body">
+				<h5>Competencias</h5>
+				<td><a class="btn btn-success" href="/create_competencias">Crear<span class="sr-only">(current)</span></a></td>
+			</div>
+			<div class="card card-body">
+				<table class="table">
+					<tr>
+						<th>Descripcion</th>
+						<th>Estado</th>
+					</tr>
+
+					{% for i in competencias %}
+					<tr>
+						<td>{{i.descripcion}}</td>
+						<td>{{i.estado}}</td>
+						<td><a class="btn btn-info" href="/update_competencias/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+						<td><a class="btn btn-danger" href="/delete_competencias/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+						<td><a class="btn btn-info" href="/view_competencias/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

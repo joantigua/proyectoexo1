@@ -1,0 +1,46 @@
+{%  extends 'crudrh/main.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+
+			<form method="GET">
+				{{myFilter.form}}
+
+				<button type="submit" class="btn btn-secondary">Buscar</button>
+			</form>
+			<div class="card card-body">
+				<table class="table">
+					<tr>
+						<th>Cedula</th>
+						<th>Nombre</th>
+						<th>Puesto</th>
+						<th>Salario</th>
+					</tr>
+
+					{% for i in candidatos %}
+					<tr>
+						<td>{{i.cedula}}</td>
+						<td>{{i.nombre_candidato}}</td>
+						<td>{{i.puesto_aspiracion}}</td>
+						<td>{{i.salario_aspiracion}}</td>
+						<td><a class="btn btn-info" href="/update_candidatos/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+						<td><a class="btn btn-danger" href="/delete_candidatos/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+						<td><a class="btn btn-info" href="/view_candidatos/{{ i.id }}">Detalles<span class="sr-only">(current)</span></a></td>
+					</tr>
+					{% endfor %}
+
+				</table>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+{% endblock content %}

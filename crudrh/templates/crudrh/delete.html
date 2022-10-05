@@ -1,0 +1,15 @@
+{% extends 'crudrh/main.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <p>Are you sure you want to delete "{{candidatos}}"</p>
+    <form action="{% url delete_candidatos %}" method="POST">
+        {% csrf_token %}
+        <a href="/candidatos">Cancelar</a>
+
+        <input type="submit" name="Confirmar" />
+    </form>
+{% endblock content %}

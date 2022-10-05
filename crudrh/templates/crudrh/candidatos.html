@@ -1,0 +1,42 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Candidatos</h5>
+					<td><a class="btn btn-success" href="/create_candidatos">Crear<span class="sr-only">(current)</span></a></td>
+					<br>
+					<td><a class="btn btn-success" href="/search_candidatos">Filtrar Busqueda<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Cedula</th>
+							<th>Nombre</th>
+							<th>Puesto</th>
+							<th>Salario</th>
+						</tr>
+
+						{% for i in candidatos %}
+						<tr>
+							<td>{{i.cedula}}</td>
+							<td>{{i.nombre_candidato}}</td>
+							<td>{{i.puesto_aspiracion}}</td>
+							<td>{{i.salario_aspiracion}}</td>
+							<td><a class="btn btn-info" href="/update_candidatos/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-danger" href="/delete_candidatos/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-info" href="/view_candidatos/{{ i.id }}">Detalles<span class="sr-only">(current)</span></a></td>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

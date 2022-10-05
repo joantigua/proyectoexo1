@@ -1,0 +1,39 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Empleados</h5>
+					<td><a class="btn btn-success" href="/create_empleados">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+					
+					<div class="card card-body">
+						<table class="table">
+							<tr>
+								<th>Codigo de Empleado</th>
+								<th>Candidato</th>
+								<th>Fecha Inicio</th>
+							</tr>
+
+							{% for i in empleados %}
+							<tr>
+								<td>{{i.codigo_empleado}}</td>
+								<td>{{i.candidato}}</td>
+								<td>{{i.fecha_inicio}}</td>
+								<td><a class="btn btn-info" href="/update_empleados/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-danger" href="/delete_empleados/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-info" href="/view_empleados/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+							</tr>
+							{% endfor %}
+
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+{% endblock content %}

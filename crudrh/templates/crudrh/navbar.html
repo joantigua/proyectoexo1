@@ -1,0 +1,49 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src = "{% static 'images/logo.png' %}">
+  <style>
+    img {  
+      max-width: 10%;  
+      height: 10%;  
+      } 
+    
+  </style>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      {% if request.user.is_staff %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Opciones Internas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/competencias">Competencias</a>
+          <a class="dropdown-item" href="/capacitaciones">Capacitaciones</a>
+          <a class="dropdown-item" href="/idiomas">Idiomas</a>
+          <a class="dropdown-item" href="/puestos">Puestos</a>
+          <a class="dropdown-item" href="/empleados">Empleados</a>
+        </div>
+      </li>
+      {% endif %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Opciones Externas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/experiencia_laboral">Experiencia Laboral</a>
+          <a class="dropdown-item" href="/candidatos">Candidatos</a>
+        </div>
+      </li>
+    </ul>
+    
+    <span>Hello, {{request.user}}  -</span>
+    <span><a href = "/logout">Logout</a></span>
+  </div>
+  
+</nav>

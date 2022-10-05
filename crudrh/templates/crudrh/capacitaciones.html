@@ -1,0 +1,40 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Capacitaciones</h5>
+					<td><a class="btn btn-success" href="/create_capacitaciones">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Descripcion</th>
+							<th>Nivel</th>
+							<th>Institucion</th>
+              <th>Fecha Inicio - Fecha Final</th>
+						</tr>
+
+						{% for i in capacitaciones %}
+						<tr>
+							<td>{{i.descripcion}}</td>
+							<td>{{i.nivel}}</td>
+							<td>{{i.institucion}}</td>
+							<td>{{i.fecha_inicio}} - {{i.fecha_final}}</td>
+							<td><a class="btn btn-info" href="/update_capacitaciones/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-danger" href="/delete_capacitaciones/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-info" href="/view_capacitaciones/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

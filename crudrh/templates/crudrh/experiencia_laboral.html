@@ -1,0 +1,42 @@
+{%  extends 'crudrh/main.html' %}
+
+{% block content %}
+
+		<br>
+	
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Experiencia Laboral</h5>
+					<td><a class="btn btn-success" href="/create_experiencia_laboral">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Empresa</th>
+							<th>Puesto Ocupado</th>
+							<th>Salario</th>
+							<th>Fecha Inicio - Fecha Final</th>
+							<th>Usuario</th>
+						</tr>
+
+						{% for i in experiencia_laboral %}
+						<tr>
+							<td>{{i.empresa}}</td>
+							<td>{{i.puesto_ocupado}}</td>
+							<td>{{i.salario}}</td>
+							<td>{{i.fecha_inicio}} - {{i.fecha_final}}</td>
+							<td>{{i.usuario}}</td>
+							<td><a class="btn btn-info" href="/update_experiencia_laboral/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-danger" href="/delete_experiencia_laboral/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							<td><a class="btn btn-info" href="/view_experiencia_laboral/{{ i.id }}">Detalle<span class="sr-only">(current)</span></a></td>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'crudrh/main.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel = "stylesheet" type = "text/css" href = "{% static '/css/main.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <div class="container">
+      <div class="card card-body">
+          <ul class="list-group">
+              {% for experiencia_laboral in experiencia_laboral %}
+              <li class="list-group-item"><strong>Empresa:</strong> {{experiencia_laboral.empresa}}</li>
+              <li class="list-group-item"><strong>Puesto ocupado:</strong> {{experiencia_laboral.puesto_ocupado}}</li>
+              <li class="list-group-item"><strong>Fecha de inicio:</strong> {{experiencia_laboral.fecha_inicio}}</li>
+              <li class="list-group-item"><strong>Fecha de finalizacion:</strong> {{experiencia_laboral.fecha_final}}</li>
+              <li class="list-group-item"><strong>Salario:</strong> {{experiencia_laboral.salario}}</li>
+              {% endfor %}
+          </ul>
+          <td><a class="btn btn-secondary" href="/experiencia_laboral">Atras<span class="sr-only">(current)</span></a></td>
+      </div>
+  </div>
+{% endblock content %}
+
+
